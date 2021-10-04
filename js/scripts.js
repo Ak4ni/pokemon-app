@@ -10,7 +10,6 @@ let pokemonList = [
 ];
 
 
-const maxHeight = 2;
 
 const maxHeight = 2;
 for (let i = 0; i < pokemonList.length; i++) {

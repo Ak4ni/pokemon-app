@@ -8,3 +8,17 @@ let pokemonList = [
 {name: 'balstoise', height: 2, type: ['water']},
 {name: 'electabuzz', height: 1, type: ['electric']},
 ];
+
+
+const maxHeight = 2;
+for (let i = 0; i < pokemonList.length; i++){
+    let pokemonObject =pokemonList.length;
+    console.log( ${pokemonObject.name}-${pokemonObject.height} );
+    document.write(<p>${pokemonObject.name}</p>);
+    if( pokemonObject.height >= maxHeight){
+        document.write(<p>${pokemonObject.name} - Wow, that's big!</p>);
+    } else {
+        document.write(<p>${pokemonObject.name} - Wow, that's big</p>);
+    }
+}
+ 

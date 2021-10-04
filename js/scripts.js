@@ -18,7 +18,7 @@ let pokemonObject = pokemonList[i];
 console.log(${pokemonObject.name}-${pokemonObject.height});
 document.write(<p>${pokemonObject.name}</p>);
 
-if( pokemonObject.height >= maxHeight ){
+if ( pokemonObject.height >= maxHeight ) {
 document.write(<p>${pokemonObject.name} - Wow, that’s big!</p>);
 } else {
 document.write(<p>${pokemonObject.name} - Wow, that’s big!</p>);

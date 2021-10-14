@@ -33,7 +33,7 @@ let pokemonRepository = (function() {
   }());
 
 
-    let newPokemon = { name:'Venomoth', height:'2', weight:'13', type:['Bug', 'Poison']};
+    let newPokemon = { name:'Venomoth',type:['Bug', 'Poison'], height:'2', weight:'13'};
       pokemonRepository.add(newPokemon);
 
 

@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  .page-header {
+    display: flex;
+    height: 75px;
+    background-color: red;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    margin-left: 30px;
+    color: white;
+  }
+  
+  .pokemon-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .poke-button {
+    border: none;
+    background-color: blue;
+    padding: 12px 16px;
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 120px;
+    border-radius: 5px;
+  }
+  
+  .show {
+    display: block;
+  }

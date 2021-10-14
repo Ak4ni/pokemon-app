@@ -59,6 +59,7 @@ let pokemonRepository = (function() {
         '</p>'
         ); 
       } 
+
       else { 
       document.write( 
           '<p>' +

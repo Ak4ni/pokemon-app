@@ -32,6 +32,11 @@ let pokemonRepository = (function() {
   };
   }());
 
+
+    let newPokemon = { name:'Venomoth', height:'2', weight:'13', types:['Bug', 'Poison']};
+      pokemonRepository.add(newPokemon);
+
+
   // forEach function to write out pokemon type, height and weight, listing one pokemon as larger
    pokemonRepository.getAll().forEach(function(pokemon) {
       
@@ -76,4 +81,4 @@ let pokemonRepository = (function() {
         ')' +
          '</p>'
          );
-      }
+      });

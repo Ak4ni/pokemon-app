@@ -19,66 +19,55 @@ let pokemonRepository = (function() {
   ];
 
   //for adding to pokedex entry { name: '', type: ['' , ''], height: , weight: }, or { name: '', type: [''], height: , weight: }, 
+  function add(pokemon) {
+    if (
+      typeof pokemon === "object" &&
+      "name" in pokemon &&
+      "height" in pokemon &&
+      "types" in pokemon
+    ) {
+      pokemonRepository.push(pokemon);
+    } else {
+      console.log("pokemon is not correct")
+    }
+  }
   function getAll() {
       return pokemonList;
-  };
+    }
+    
   function add(item) {
       return pokemonList.push(item);
-  };
-   
+  }
+
+   function showDetails(pokemon){
+     console.log(pokemon.name);
+    }
+
+  function addListitem(pokemon){
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("poke-button");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+  }
   return {
       getAll: getAll,
       add: add,
+      addListitem:addListitem
   };
   }());
+ 
+  let newPokemon = 
+  { name:'Venomoth', 
+  type:['Bug', 'Poison'], height:'2', weight:'13'};
+  pokemonRepository.add(newPokemon);
 
-
-    let newPokemon = { name:'Venomoth', type:['Bug', 'Poison'], height:'2', weight:'13'};
-      pokemonRepository.add(newPokemon);
-
-
-  // forEach function to write out pokemon type, height and weight, listing one pokemon as larger
-   pokemonRepository.getAll().forEach(function(pokemon) {
-      
-    //Pokemon varibles for names, type, height, and weight
-      let pokemonName = pokemon.name;
-      let pokemonType = pokemon.type;
-      let pokemonHeight = pokemon.height;
-      let pokemonWeight = pokemon.weight;
+  console.log(pokemonRepository.getAll()); 
   
-     if (pokemonHeight >= 4) {
-       document.write(
-        '<p>' + 
-        pokemonName +
-        ' ' +
-        '(Type: ' +
-        pokemonType +
-        ')' +
-        '(Height: ' +
-         pokemonHeight +
-        ')' + 
-        " That's a BIG ONE! " + 
-        '(Weight: ' +
-        pokemonWeight +
-        ')' +
-        '</p>'
-        ); 
-      } 
+    pokemonRepository.getAll().forEach(function(pokemon) {
+     pokemonRepository.addListitem(pokemon);
+    })
 
-      else { 
-      document.write( 
-          '<p>' +
-          pokemonName +
-          ' ' + 
-          '(Type: ' +
-          pokemonType +
-          ')' +
-          '(Height: ' +
-        pokemonHeight +
-         ')' + " That's a Pokemon! " +
-         '(Weight: ' +
-        pokemonWeight +
-        ')' +
-         '</p>'
-         );
-      });
+  

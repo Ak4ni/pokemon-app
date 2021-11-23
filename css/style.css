@@ -2,11 +2,13 @@ body{
   color:transparent;
   background-color:white;
 }
+p{
+ color:white;
+}
 * {
     box-sizing: border-box;
-    margin: 0;
+    margin: 10px;
   }
-  
   .page-header {
     display: flex;
     height: 75px;
@@ -21,10 +23,22 @@ body{
   }
   
   .pokemon-list {
-    list-style: none;
-    padding: 0;
- 
+    background-color: #000000;
+    border: solid #1457bb 8px;
+    list-style-type: none;
+    padding: 20px;
+    box-shadow: 0 0 10px black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
   }
+
+  li {
+    padding: 1rem;
+}
   
   .poke-button {
     border: none;
@@ -46,7 +60,10 @@ body{
     background-color: rgba(51, 169, 238, 0.466);
     color: rgb(250, 250, 246);
     border: 2px solid #bf05e4b2;
+    align-items: center;
   }
+
+  
   
   .show {
     display: block;

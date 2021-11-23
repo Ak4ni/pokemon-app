@@ -73,9 +73,10 @@ let pokemonRepository = (function () {
 
   function showModal(pokemon){
     let modalContainer = document.querySelector('#modal-container');
+    modalContainer.innerHTML = ""; 
     let modal = document.createElement('div');
     modal.classList.add('modal');
-
+    
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'X';
@@ -93,17 +94,20 @@ let pokemonRepository = (function () {
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
-
+    
     pokemon.types.forEach(item => {
         let contentElement = document.createElement('p');
         contentElement.innerText = ('Type: ') + item.type.name;
         modal.appendChild(contentElement);
+       
     });
 
-    modal.appendChild(imgElement);
+    
 
     modalContainer.appendChild(modal);
     modalContainer.classList.add('is-visible');
+    modal.appendChild(imgElement);
+
 
     function hideModal() {
       let modalContainer = document.querySelector('#modal-container');

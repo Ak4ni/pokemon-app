@@ -49,27 +49,16 @@ let pokemonRepository = (function () {
     });
   }
 
-  const loader = document.querySelector('#loading');
-
-  function showLoadingMessage() {
-    loader.classList.add('show');
-  }
-
-  function hideLoadingMessage() {
-    loader.classList.remove('show');
-  }
-
-
   // This code will fetch info from json'
   function loadList() {
-    showLoadingMessage();
+    
     return fetch(apiUrl)
     .then(function (response) {
       return response.json();
     })
     
     .then(function (json) {
-      hideLoadingMessage();
+     
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
@@ -78,21 +67,20 @@ let pokemonRepository = (function () {
         add(pokemon);
       });
     })
-    .catch(function (e) {
-      hideLoadingMessage();
-      console.error(e);
-    });
+ 
   }
-//This code will fetch details about pokemos like: img, height, type, weight.
+
+
+  //This code will fetch details about pokemos like: img, height, type, weight.
    function loadDetails(pokemon) {
-     showLoadingMessage();
+    
     let url = pokemon.detailsUrl;
     return fetch(url)
     .then(function (response) {
       return response.json();
     })
     .then(function (details) {
-      hideLoadingMessage();
+      
       // Now we add the details to the item
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
@@ -100,7 +88,7 @@ let pokemonRepository = (function () {
       pokemon.types = details.types;
     })
     .catch(function (e) {
-      hideLoadingMessage();
+    
       console.error(e);
     });
 }
@@ -123,9 +111,7 @@ function showDetails(pokemon) {
     let imageElement = $('<img class="modal-img" style="width:50%"> alt=""');
     imageElement.attr('src', pokemon.imageUrl);
     let heightElement = $('<p>' + 'Height : ' + pokemon.height + ' m' + '</p>');
-    let weightElement = $(
-      '<p>' + 'Weight : ' + pokemon.weight + ' kg' + '</p>'
-    );
+    let weightElement = $('<p>' + 'Weight : ' + pokemon.weight + ' kg' + '</p>');
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
@@ -173,19 +159,8 @@ function showDetails(pokemon) {
   };
 })();
 
-pokemonRepository.loadList().then(function () {
-  //Search
-  document
-  .querySelector('.search-pokemon')
-  .addEventListener('submit', function (event) {
-    event.preventDefault();
-    let query = document.querySelector('#myInput').value;
-    document.querySelector('.pokemon-list').innerHTML ='';
-    if (query === ''){
-      pokemonRepository.getAll().forEach(function (pokemon){
-        pokemonRepository.addListItem(pokemon);
-  });
-} else {
+pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function (pokemon) {
-    pokemonRepository.addListItem(pokemon);
+  pokemonRepository.addListItem(pokemon)
+  });
   });

@@ -164,3 +164,17 @@ pokemonRepository.loadList().then(function() {
   pokemonRepository.addListItem(pokemon)
   });
   });
+  let pokemonSearchBar = document.querySelector('#search-input');
+
+  pokemonSearchBar.addEventListener('input', function() {
+  let pokeItem = document.querySelectorAll('li');
+  let filter = pokemonSearchBar.value.toUpperCase();
+  
+  pokeItem.forEach(function(pokemon){
+  if (pokemon.innerText.toUpperCase().indexOf(filter) === 0) {
+  pokemon.style.display = 'block';
+  } else {
+  pokemon.style.display = 'none';
+  }
+  });
+  });

@@ -24,7 +24,7 @@
           <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <ul class="list-group navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item">
                   <a class="nav-link" href="#">Pokemon Med</a>
               </li>
@@ -42,9 +42,11 @@
           </form>
       </div>
   </nav>
-    
-  
-  
+  <!--Header-->
+  <header class="page-header">
+    <h1>List of Pokemons</h1>
+  </header>
+
   <!-- Modal -->
   <div id="exampleModalLive" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLiveLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -70,15 +72,18 @@
 
 <!--Back Button -->
 <button type="button" 
-        class="btn btn-danger btnfloating btn-lg" 
+        class="btn btn-lg" 
         id="btn-back-to-top">Back to Top
       <i class="fas fa-arrow-up"></i>
       </button>
   
+      
+    <div class="container"> 
       <!--Pokemion List JSON-->
-  <ul class="pokemon-list">
-      <li class="list-item"></li>
+  <ul class="pokemon-list list-group">
+      <li class="list-group-item-action"></li>
     </ul>
+  
     
     
     

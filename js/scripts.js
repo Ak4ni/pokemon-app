@@ -164,7 +164,7 @@ pokemonRepository.loadList().then(function() {
   pokemonRepository.addListItem(pokemon)
   });
   });
-  let pokemonSearchBar = document.querySelector('#search-input');
+  let pokemonSearchBar = document.querySelector('#myInput');
 
   pokemonSearchBar.addEventListener('input', function() {
   let pokeItem = document.querySelectorAll('li');
